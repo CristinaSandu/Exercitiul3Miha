@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Person {
 
-    private String name;
+    protected String name;
     private ArrayList<String> aptitudes;
     private String phoneNumber;
     private String email;
@@ -15,8 +15,19 @@ public class Person {
         this.email = email;
     }
 
+    public Person(){}
+
+    public Person(Person person){
+        this.name = person.getName();
+        this.aptitudes = person.getAptitudes();
+        this.phoneNumber = person.getPhoneNumber();
+        this.email=person.getEmail();
+
+    }
+
     public String getName() {
-        return name;
+
+        return this.name;
     }
 
     public void setName(String name) {
@@ -47,10 +58,13 @@ public class Person {
         this.email = email;
     }
 
-    public Person(){}
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + getName() + '\'' +
+                ", aptitudes=" + aptitudes +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
