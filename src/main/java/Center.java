@@ -1,9 +1,11 @@
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-public @Data class Center {
+public  class Center {
 
-    private String city;
-    private String buildingName;
+    private  String city;
+    private  String buildingName;
 
 
     public Center(String city, String buildingName) {

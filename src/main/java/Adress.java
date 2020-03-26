@@ -1,6 +1,6 @@
 public class Adress {
-    private String officeNumber;
-    private String deskNumber;
+    private  String officeNumber;
+    private  String deskNumber;
 
     public Adress(String officeNumber, String deskNumber) {
         this.officeNumber = officeNumber;

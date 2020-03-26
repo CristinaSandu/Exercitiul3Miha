@@ -1,6 +1,5 @@
-
-public class QA extends Employee {
-private String tehnicalLevel;
+public  class QA extends Employee {
+private  String tehnicalLevel;
 
 
     public QA(String tehnicalLevel) {

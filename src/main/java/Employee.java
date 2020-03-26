@@ -1,13 +1,12 @@
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.List;
 
-public @Data
-class Employee extends Person {
+public class Employee extends Person {
 
-    private Center workingCenter;
-    private Manager reportingManager;
-    private Adress adress;
+    private  Center workingCenter;
+    private  Manager reportingManager;
+    private  Adress adress;
 
     public Employee(Person person, Center workingCenter, Manager reportingManager, Adress adress) {   //constructor
         // pentru person -> employee
@@ -23,11 +22,6 @@ class Employee extends Person {
         this.workingCenter=employee.getWorkingCenter();
         this.adress=employee.getAdress();
         this.reportingManager=employee.getReportingManager();
-
-    }
-
-    public Employee() {
-        super();
     }
 
     public Center getWorkingCenter() {
@@ -54,6 +48,9 @@ class Employee extends Person {
         this.adress = adress;
     }
 
+    public Employee() {
+        super();
+    }
 
         @Override
         public String toString() {
