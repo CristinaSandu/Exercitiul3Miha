@@ -1,76 +1,70 @@
-import java.util.ArrayList;
+import lombok.Data;
+
 import java.util.List;
 
-public class Employee extends Person {
+public @Data
+class Employee extends Person {
 
-    private String workingCenter;
-    private int deskNumber;
-    private int workingFloor;
-    private String reportingmanager;
+    private Center workingCenter;
+    private Manager reportingManager;
+    private Adress adress;
 
-
-    public Employee(String workingCenter, int deskNumber, int workingFloor, String reportingmanager) {    // EMployee
-        // without personal Info
-
+    public Employee(Person person, Center workingCenter, Manager reportingManager, Adress adress) {   //constructor
+        // pentru person -> employee
+        super(person);
+        this.reportingManager = reportingManager;
         this.workingCenter = workingCenter;
-        this.deskNumber = deskNumber;
-        this.workingFloor = workingFloor;
-        this.reportingmanager=reportingmanager;
+        this.adress=adress;
+
     }
 
-    public Employee(String name, List<String> aptitudes, String phonenumber, String email, String workingCenter,
-                    int deskNumber, int workingFloor, String reportingmanager){
-        super(name,aptitudes,phonenumber,email);
-        this.deskNumber=deskNumber;
-        this.reportingmanager=reportingmanager;
-        this.workingCenter=workingCenter;
-        this.workingFloor=workingFloor;
+    public Employee (Employee employee){
+        super(employee.getName(), employee.getAptitudes(), employee.getPhoneNumber(), employee.getEmail());
+        this.workingCenter=employee.getWorkingCenter();
+        this.adress=employee.getAdress();
+        this.reportingManager=employee.getReportingManager();
+
     }
 
+    public Employee() {
+        super();
+    }
 
-
-   public Employee(){super();}
-
-    public String getWorkingCenter() {
+    public Center getWorkingCenter() {
         return workingCenter;
     }
 
-    public void setWorkingCenter(String workingCenter) {
+    public void setWorkingCenter(Center workingCenter) {
         this.workingCenter = workingCenter;
     }
 
-    public int getDeskNumber() {
-        return deskNumber;
+    public Manager getReportingManager() {
+        return reportingManager;
     }
 
-    public void setDeskNumber(int deskNumber) {
-        this.deskNumber = deskNumber;
+    public void setReportingManager(Manager reportingManager) {
+        this.reportingManager = reportingManager;
     }
 
-    public int getWorkingFloor() {
-        return workingFloor;
+    public Adress getAdress() {
+        return adress;
     }
 
-    public void setWorkingFloor(int workingFloor) {
-        this.workingFloor = workingFloor;
+    public void setAdress(Adress adress) {
+        this.adress = adress;
     }
 
-    public String getReportingmanager() {
-        return reportingmanager;
+
+        @Override
+        public String toString() {
+            Person p = this;
+            String toReturn = String.format("Employee %s { Working center = %s , Reporting manager = %s, Adress = %s}",
+
+                    workingCenter.toString(), reportingManager.toString(), adress.toString());
+
+            return toReturn;
+        }
+
+
     }
 
-    public void setReportingmanager(String reportingmanager) {
-        this.reportingmanager = reportingmanager;
-    }
-   /* @Override
-    public String toString() {
-        return String.format("city - %s, building name - %s,  name - %s, aptitudes - %s, phone number  - %s, manager " +
-                        "- %s ",
-
-                center.getCity(),
-                center.getBuildingName(),
-                mngtInfo.getManagerName()
-
-        );
-    } */
-}

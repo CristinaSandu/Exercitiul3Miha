@@ -4,27 +4,27 @@ import java.util.Arrays;
 public class MainRunner {
     public static void main(String[] args) {
 
-        Center aria = new Center("Iasi", "Aria", Arrays.asList(2, 3, 4));
-        Center centro = new Center("Iasi", "Centro", Arrays.asList(1));
+        Center aria = new Center("Iasi", "Aria");
+        Center centro = new Center("Iasi", "Centro");
 
-        Manager liviu = new Manager("Liviu", Arrays.asList("Scrum Master", "QA Manual"), "090909999",
-                "liviu@sv.com", aria.getBuildingName(), 2, aria.getFloors().get(2), "SomeoneSuperior",
-                Arrays.asList(aria,
-                        centro));
+        Adress adressLiviu = new Adress("333", "3");
+        Adress adressCristina = new Adress("222", "2");
 
-        QA cristina = new QA("Cristina", Arrays.asList("QA Manual"), "099097834", "cristina@sv.com",
-                aria.getBuildingName(), 20, aria.getFloors().get(0), liviu.getName());
+        Person cristina = new Person("Cristina Sandu", Arrays.asList("Atp1", "Apt2"), "0110101", "mailCristina@mail.com");
+        Person liviu = new Person("Liviu D", Arrays.asList("Atp3", "Apt4"), "0110101", "mailLiviu@mail.com");
+        Person p3 = new Person();
+       p3.setPhoneNumber("6484987");
+        Employee employeeLiviu = new Employee(liviu, aria, new Manager(), adressLiviu);
+        Manager managerLiviu = new Manager(employeeLiviu, Arrays.asList(centro));
 
-
-
-        ArrayList<Person> softVisionWorkforce = new ArrayList<Person>();
-        softVisionWorkforce.add(cristina);
-        softVisionWorkforce.add(liviu);
-
-
-        System.out.println(softVisionWorkforce);
+        Employee employeeCristina = new Employee(cristina, aria, managerLiviu, adressCristina);
+        QA qaCristina = new QA(employeeCristina, "Beginner");
 
 
+        // System.out.println(qaCristina);
+        System.out.println(managerLiviu);
+
+        System.out.println(p3);
     }
 }
 
