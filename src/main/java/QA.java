@@ -1,6 +1,5 @@
-
-public class QA extends Employee {
-private String tehnicalLevel;
+public  class QA extends Employee {
+private  String tehnicalLevel;
 
 
     public QA(String tehnicalLevel) {
@@ -29,7 +28,7 @@ private String tehnicalLevel;
                         "%s, Manager = %s }",
                this.getName(),  this.getAptitudes().toString(), this.getPhoneNumber(), this.getEmail(),
                 this.getWorkingCenter().getCity(), this.getWorkingCenter().getBuildingName(),
-                this.getAddress().getOfficeNumber(), this.getAddress().getDeskNumber(), this.getAddress().finalAdress(),
+                this.getAdress().getOfficeNumber(), this.getAdress().getDeskNumber(), this.getAdress().finalAdress(),
                 tehnicalLevel, this.getReportingManager().getName());
         return toReturn;
     }

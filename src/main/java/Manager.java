@@ -1,11 +1,13 @@
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public @Data
 class Manager extends Employee {
-    private ArrayList<Center> secondaryCenters;
+    private @Getter @Setter ArrayList<Center> secondaryCenters;
 
     public Manager(Employee employee, List<Center> secondaryCenters) {
         super(employee);
@@ -16,14 +18,7 @@ class Manager extends Employee {
     public Manager() {
     }
 
-    public ArrayList<Center> getSecondaryCenters() {
-        return secondaryCenters;
-    }
 
-
-    public void setSecondaryCenters(ArrayList<Center> secondaryCenters) {
-        this.secondaryCenters = secondaryCenters;
-    }
 
     public String getName() {
         if (this.name == null) {
@@ -42,7 +37,7 @@ class Manager extends Employee {
                         "Manager = %s}",
                 this.getName(), this.getAptitudes().toString(), this.getPhoneNumber(), this.getEmail(),
                 this.getWorkingCenter().getCity(), this.getWorkingCenter().getBuildingName(),
-                this.getAddress().getOfficeNumber(), this.getAddress().getDeskNumber(), this.getAddress().finalAdress(),
+                this.getAdress().getOfficeNumber(), this.getAdress().getDeskNumber(), this.getAdress().finalAdress(),
                 this.getReportingManager().getName());
         return toReturn;
     }

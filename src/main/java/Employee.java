@@ -1,25 +1,25 @@
 import lombok.Data;
 
-public @Data
-class Employee extends Person {
 
-    private Center workingCenter;
-    private Manager reportingManager;
-    private Address address;
+public class Employee extends Person {
 
-    public Employee(Person person, Center workingCenter, Manager reportingManager, Address address) {   //constructor
+    private  Center workingCenter;
+    private  Manager reportingManager;
+    private  Adress adress;
+
+    public Employee(Person person, Center workingCenter, Manager reportingManager, Adress adress) {   //constructor
         // pentru person -> employee
         super(person);
         this.reportingManager = reportingManager;
         this.workingCenter = workingCenter;
-        this.address = address;
+        this.adress=adress;
 
     }
 
     public Employee (Employee employee){
         super(employee.getName(), employee.getAptitudes(), employee.getPhoneNumber(), employee.getEmail());
         this.workingCenter=employee.getWorkingCenter();
-        this.address =employee.getAddress();
+        this.adress=employee.getAdress();
         this.reportingManager=employee.getReportingManager();
 
     }
@@ -44,12 +44,12 @@ class Employee extends Person {
         this.reportingManager = reportingManager;
     }
 
-    public Address getAddress() {
-        return address;
+    public Adress getAdress() {
+        return adress;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAdress(Adress adress) {
+        this.adress = adress;
     }
 
 
@@ -58,7 +58,7 @@ class Employee extends Person {
             Person p = this;
             String toReturn = String.format("Employee %s { Working center = %s , Reporting manager = %s, Adress = %s}",
 
-                    workingCenter.toString(), reportingManager.toString(), address.toString());
+                    workingCenter.toString(), reportingManager.toString(), adress.toString());
 
             return toReturn;
         }
