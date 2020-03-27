@@ -1,5 +1,4 @@
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 
 public class Employee extends Person {
@@ -22,6 +21,11 @@ public class Employee extends Person {
         this.workingCenter=employee.getWorkingCenter();
         this.adress=employee.getAdress();
         this.reportingManager=employee.getReportingManager();
+
+    }
+
+    public Employee() {
+        super();
     }
 
     public Center getWorkingCenter() {
@@ -48,9 +52,6 @@ public class Employee extends Person {
         this.adress = adress;
     }
 
-    public Employee() {
-        super();
-    }
 
         @Override
         public String toString() {
