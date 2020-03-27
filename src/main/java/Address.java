@@ -1,8 +1,8 @@
-public class Adress {
+public class Address {
     private String officeNumber;
     private String deskNumber;
 
-    public Adress(String officeNumber, String deskNumber) {
+    public Address(String officeNumber, String deskNumber) {
         this.officeNumber = officeNumber;
         this.deskNumber = deskNumber;
     }

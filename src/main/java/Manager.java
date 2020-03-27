@@ -42,7 +42,7 @@ class Manager extends Employee {
                         "Manager = %s}",
                 this.getName(), this.getAptitudes().toString(), this.getPhoneNumber(), this.getEmail(),
                 this.getWorkingCenter().getCity(), this.getWorkingCenter().getBuildingName(),
-                this.getAdress().getOfficeNumber(), this.getAdress().getDeskNumber(), this.getAdress().finalAdress(),
+                this.getAddress().getOfficeNumber(), this.getAddress().getDeskNumber(), this.getAddress().finalAdress(),
                 this.getReportingManager().getName());
         return toReturn;
     }

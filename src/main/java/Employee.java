@@ -1,27 +1,25 @@
 import lombok.Data;
 
-import java.util.List;
-
 public @Data
 class Employee extends Person {
 
     private Center workingCenter;
     private Manager reportingManager;
-    private Adress adress;
+    private Address address;
 
-    public Employee(Person person, Center workingCenter, Manager reportingManager, Adress adress) {   //constructor
+    public Employee(Person person, Center workingCenter, Manager reportingManager, Address address) {   //constructor
         // pentru person -> employee
         super(person);
         this.reportingManager = reportingManager;
         this.workingCenter = workingCenter;
-        this.adress=adress;
+        this.address = address;
 
     }
 
     public Employee (Employee employee){
         super(employee.getName(), employee.getAptitudes(), employee.getPhoneNumber(), employee.getEmail());
         this.workingCenter=employee.getWorkingCenter();
-        this.adress=employee.getAdress();
+        this.address =employee.getAddress();
         this.reportingManager=employee.getReportingManager();
 
     }
@@ -46,12 +44,12 @@ class Employee extends Person {
         this.reportingManager = reportingManager;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
 
@@ -60,7 +58,7 @@ class Employee extends Person {
             Person p = this;
             String toReturn = String.format("Employee %s { Working center = %s , Reporting manager = %s, Adress = %s}",
 
-                    workingCenter.toString(), reportingManager.toString(), adress.toString());
+                    workingCenter.toString(), reportingManager.toString(), address.toString());
 
             return toReturn;
         }
